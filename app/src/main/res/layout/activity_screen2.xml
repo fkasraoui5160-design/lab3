@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:background="#F5F0E8">
+
+    <TextView
+        android:id="@+id/titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Récapitulatif"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:fontFamily="serif"
+        android:textColor="#2C2C2C"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/recap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:fontFamily="serif"
+        android:textColor="#3D3D3D"
+        android:lineSpacingExtra="6dp"
+        android:padding="16dp"
+        android:background="#EADFC8"/>
+
+    <Button
+        android:id="@+id/btnRetour"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="← Retour"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:backgroundTint="#8B5E3C"
+        android:layout_marginTop="24dp"/>
+
+</LinearLayout>

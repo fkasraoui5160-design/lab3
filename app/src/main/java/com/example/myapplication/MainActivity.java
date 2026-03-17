@@ -1,46 +1,45 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.CheckBox;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText surfaceInput, piecesInput;
-    private CheckBox piscineCheckbox;
-    private TextView resultView;
+    private EditText nom, email, phone, adresse, ville;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        surfaceInput = findViewById(R.id.input_surface);
-        piecesInput = findViewById(R.id.input_pieces);
-        piscineCheckbox = findViewById(R.id.checkbox_piscine);
-        resultView = findViewById(R.id.result);
+        nom     = findViewById(R.id.nom);
+        email   = findViewById(R.id.email);
+        phone   = findViewById(R.id.phone);
+        adresse = findViewById(R.id.adresse);
+        ville   = findViewById(R.id.ville);
 
-        findViewById(R.id.button_calcul).setOnClickListener(v -> calculer());
+        findViewById(R.id.btnEnvoyer).setOnClickListener(v -> envoyer());
     }
 
-    private void calculer() {
-        String s = surfaceInput.getText().toString();
-        String p = piecesInput.getText().toString();
+    private void envoyer() {
+        String sNom   = nom.getText().toString().trim();
+        String sEmail = email.getText().toString().trim();
 
-        if (s.isEmpty() || p.isEmpty()) {
-            Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
+        if (sNom.isEmpty() || sEmail.isEmpty()) {
+            Toast.makeText(this, "Nom et Email sont obligatoires.", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        double surface = Double.parseDouble(s);
-        int pieces = Integer.parseInt(p);
-        boolean piscine = piscineCheckbox.isChecked();
-
-        double total = (surface * 2) + (pieces * 50) + (piscine ? 100 : 0);
-
-        resultView.setText("Impôt total : " + total + " DH");
+        Intent i = new Intent(this, Screen2Activity.class);
+        i.putExtra("nom",     sNom);
+        i.putExtra("email",   sEmail);
+        i.putExtra("phone",   phone.getText().toString().trim());
+        i.putExtra("adresse", adresse.getText().toString().trim());
+        i.putExtra("ville",   ville.getText().toString().trim());
+        startActivity(i);
     }
 }

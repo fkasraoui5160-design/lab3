@@ -1,74 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="32dp"
-    android:gravity="center"
-    android:background="#0D0D1A">
+    android:background="#F5F0E8">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calcul d'Impôt"
-        android:textSize="28sp"
-        android:textColor="#FF6B6B"
-        android:textStyle="bold"
-        android:layout_marginBottom="32dp"/>
-
-    <EditText
-        android:id="@+id/input_surface"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:hint="Surface (m²)"
-        android:textColorHint="#888888"
-        android:textColor="#FFFFFF"
-        android:inputType="numberDecimal"
-        android:backgroundTint="#FF6B6B"
-        android:paddingStart="12dp"
-        android:layout_marginBottom="16dp"/>
-
-    <EditText
-        android:id="@+id/input_pieces"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:hint="Nombre de pièces"
-        android:textColorHint="#888888"
-        android:textColor="#FFFFFF"
-        android:inputType="number"
-        android:backgroundTint="#FF6B6B"
-        android:paddingStart="12dp"
-        android:layout_marginBottom="16dp"/>
-
-    <CheckBox
-        android:id="@+id/checkbox_piscine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Piscine (+100 DH)"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:buttonTint="#FF6B6B"
-        android:layout_marginBottom="24dp"/>
-
-    <Button
-        android:id="@+id/button_calcul"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="CALCULER"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:backgroundTint="#FF6B6B"
-        android:layout_marginBottom="24dp"/>
-
-    <TextView
-        android:id="@+id/result"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:textColor="#FF6B6B"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="16dp"
-        android:background="#1A1A2E"/>
+        android:orientation="vertical"
+        android:padding="24dp">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Formulaire"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textColor="#2C2C2C"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom &amp; Prénom"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textColor="#5C3D2E"/>
+        <EditText
+            android:id="@+id/nom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="KASRAOUI Fatima Ezzahra"
+            android:fontFamily="serif"
+            android:textColor="#2C2C2C"
+            android:textColorHint="#A0927E"
+            android:backgroundTint="#8B5E3C"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textColor="#5C3D2E"/>
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex : user@gmail.com"
+            android:fontFamily="serif"
+            android:textColor="#2C2C2C"
+            android:textColorHint="#A0927E"
+            android:backgroundTint="#8B5E3C"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Téléphone"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textColor="#5C3D2E"/>
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex : +212676000000"
+            android:fontFamily="serif"
+            android:textColor="#2C2C2C"
+            android:textColorHint="#A0927E"
+            android:backgroundTint="#8B5E3C"
+            android:inputType="phone"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adresse"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textColor="#5C3D2E"/>
+        <EditText
+            android:id="@+id/adresse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mon adresse, Marrakech"
+            android:fontFamily="serif"
+            android:textColor="#2C2C2C"
+            android:textColorHint="#A0927E"
+            android:backgroundTint="#8B5E3C"
+            android:inputType="textPostalAddress"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ville"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textColor="#5C3D2E"/>
+        <EditText
+            android:id="@+id/ville"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Marrakech 40000"
+            android:fontFamily="serif"
+            android:textColor="#2C2C2C"
+            android:textColorHint="#A0927E"
+            android:backgroundTint="#8B5E3C"
+            android:inputType="textCapWords"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btnEnvoyer"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Envoyer →"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:backgroundTint="#8B5E3C"/>
+
+    </LinearLayout>
+</ScrollView>
